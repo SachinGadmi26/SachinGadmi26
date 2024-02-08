@@ -1,0 +1,8 @@
+	Connection connection = jdbcTemplate.getDataSource().getConnection();
+		String sql1 = "select * from mri_sw_ver where MSV_VER_NO='"+app_version+"' and MSV_STATUS='Y' and MSV_TYPE='COLLECTION'";
+		Statement statement = connection.createStatement();
+	    ResultSet resultSet = statement.executeQuery(sql1);
+	    while (resultSet.next()) {
+	        sts = true;
+	        System.out.println(sts);
+	    }
